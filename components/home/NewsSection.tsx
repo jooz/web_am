@@ -7,19 +7,19 @@ import { Facebook, MessageCircle, Youtube, Instagram } from "lucide-react";
 const NEWS_MOCK = [
     {
         id: "1",
-        title: "Miranda apuesta a la protección animal con nuevo registro",
-        excerpt: "La Alcaldía de Miranda, a través de su consejo de protección, anunció el inicio de...",
-        image: "/noticia-animal.jpg",
-        category: "Protección Animal",
-        slug: "proteccion-animal-registro"
+        title: "La medicina no es solo una profesión, es mi forma de vida",
+        excerpt: "Para mí, la medicina no es solo una profesión, es mi forma de vida. Más allá de la oficina, mi mayor satisfacción sigue siendo ponerme la bata y atender a mi gente cara a cara. Ser médico es mi raíz; servirles, mi mayor pasión",
+        image: "/noticia1.jpeg",
+        category: "Salud",
+        slug: "la-medicina-no-es-solo-una-profesion-es-mi-forma-de-vida"
     },
     {
         id: "2",
-        title: "Excelencia educativa con la apertura del liceo municipal",
-        excerpt: "El Alcalde anunció la inauguración de nuevos espacios para el fortalecimiento de...",
-        image: "/noticia-educacion.jpg",
-        category: "Educación",
-        slug: "apertura-liceo-municipal"
+        title: "Unidad Territorial de Seguridad y Cuadrantes de Paz",
+        excerpt: "Encuentro clave con los responsables de la Unidad Territorial de Seguridad y Cuadrantes de Paz donde revisamos el funcionamiento en cada sector en nuestro municipio para que la respuesta sea inmediata y efectiva.",
+        image: "/noticia2.jpeg",
+        category: "Seguridad",
+        slug: "unidad-territorial-de-seguridad-y-cuadrantes-de-paz"
     }
 ];
 

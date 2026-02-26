@@ -9,7 +9,6 @@ export default function TopBar() {
             <div className="hidden md:flex space-x-4">
                 <Link href="/gacetas" className="hover:underline">Gacetas Municipales</Link>
                 <Link href="/ordenanzas" className="hover:underline">Ordenanzas</Link>
-                <Link href="/memoria-y-cuenta" className="hover:underline">Memoria y Cuenta</Link>
                 <Link href="/semanario" className="hover:underline">Semanario</Link>
             </div>
         </div>
