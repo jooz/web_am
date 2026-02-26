@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alcaldía del Municipio Miranda - Gestión que Construye</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Public Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#1754cf',
+              green: '#4caf50',
+              yellow: '#ffeb3b',
+              dark: '#0a2e7a'
+            }
+          },
+          fontFamily: {
+            sans: ['Public Sans', 'sans-serif'],
+          },
+          borderRadius: {
+            'eight': '8px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styling">
+    body {
+      font-family: 'Public Sans', sans-serif;
+    }
+    .hero-gradient {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    }
+    .nav-link {
+      @apply text-gray-700 hover:text-brand-blue font-medium transition-colors duration-200 text-sm uppercase;
+    }
+    .btn-brand {
+      @apply bg-brand-blue text-white px-6 py-2 rounded-eight hover:bg-brand-dark transition-all duration-300 font-semibold;
+    }
+    .section-title {
+      @apply text-3xl font-bold text-gray-800 relative inline-block pb-2 mb-8;
+    }
+    .section-title::after {
+      content: '';
+      @apply absolute bottom-0 left-0 w-1/2 h-1 bg-brand-blue;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+<!-- BEGIN: TopBar -->
+<div class="bg-brand-dark text-white py-2 px-4 md:px-12 text-xs flex justify-between items-center" data-purpose="top-bar">
+<div class="flex items-center space-x-4">
+<span>Número de emergencia: <strong>0268-2512345</strong></span>
+</div>
+<div class="hidden md:flex space-x-4">
+<a class="hover:underline" href="#">Gacetas Municipales</a>
+<a class="hover:underline" href="#">Ordenanzas</a>
+<a class="hover:underline" href="#">Memoria y Cuenta</a>
+<a class="hover:underline" href="#">Semanario</a>
+</div>
+</div>
+<!-- END: TopBar -->
+<!-- BEGIN: MainHeader -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+<nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+<div class="flex items-center">
+<img alt="Logo Alcaldía Miranda" class="h-16 w-auto" src="{{DATA:IMAGE:IMAGE_8}}"/>
+<span class="ml-3 text-xl font-bold text-brand-dark tracking-tight hidden sm:block">Alcaldía de Miranda</span></div>
+<div class="hidden lg:flex items-center space-x-6">
+<a class="nav-link text-brand-blue" href="#">Inicio</a>
+<div class="group relative">
+<button class="nav-link flex items-center">Alcaldía <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+</div>
+<div class="group relative">
+<button class="nav-link flex items-center">Trámites <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+</div>
+<a class="nav-link" href="#">Turismo</a>
+<a class="nav-link" href="#">Noticias</a>
+<a class="nav-link" href="#">Atención al Ciudadano</a>
+<a class="bg-brand-green text-white px-4 py-2 rounded-eight font-bold hover:bg-green-600 transition-colors" href="#">Semat en Línea</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="lg:hidden p-2">
+<svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</nav>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<section class="relative h-[600px] overflow-hidden">
+<!-- Hero Image: Colonial Zone of Coro placeholder -->
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{DATA:IMAGE:IMAGE_16}}');">
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative container mx-auto h-full flex flex-col justify-center px-4 md:px-12 text-white">
+<h1 class="text-4xl md:text-6xl font-bold max-w-3xl leading-tight">
+        ¡CONOCE LOS DETALLES SOBRE EL NUEVO PROYECTO DE RECUPERACIÓN DEL CASCO HISTÓRICO!
+      </h1>
+<p class="mt-6 text-xl max-w-xl">
+        Para mayor información sobre los avances de nuestra gestión patrimonial entra aquí.
+      </p>
+<div class="mt-10">
+<a class="bg-brand-green hover:bg-green-600 text-white px-8 py-3 rounded-eight font-bold text-lg inline-block transition-transform hover:scale-105" href="#">Ver más</a>
+</div>
+</div>
+<!-- Carousel Dots -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
+<div class="w-3 h-3 rounded-full bg-white"></div>
+<div class="w-3 h-3 rounded-full bg-white/50"></div>
+<div class="w-3 h-3 rounded-full bg-white/50"></div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: NewsSection -->
+<main class="container mx-auto px-4 py-16">
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Left: News Grid -->
+<div class="lg:w-2/3">
+<h2 class="section-title">Últimas noticias</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- News Item 1 -->
+<article class="bg-white rounded-eight shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+<img alt="Protección Animal" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAKgDSHAx0mUchvp1KLHnFJsptfYGyjd4trKMhH7ATNt0tM6vk2AuG5lMhWu3FmJg0oxkLugh0kyG2Bf7mh6-GOgDSuqLWVNoYsqiDbwaRyHkqm6qgxJWWqRxrxm0QVRllyXwdF3KDf0fDyOzn_HNfU7VQj3CmURwsvyhZVg6IuZm0Zc7o5BkiiPMlBIZzr2pFdbMEFk9tM1_7ojEBZV3OXHl27PGXZJrfNUX5pbR-og34llwDsKlX2Ea41o2qSz9C9uFyv5jemXY"/>
+<div class="p-6">
+<h3 class="text-xl font-bold text-brand-dark mb-3">Miranda apuesta a la protección animal con nuevo registro</h3>
+<p class="text-gray-600 text-sm mb-4">La Alcaldía de Miranda, a través de su consejo de protección, anunció el inicio de...</p>
+<a class="text-brand-blue font-bold text-sm hover:underline" href="#">Leer más</a>
+</div>
+</article>
+<!-- News Item 2 -->
+<article class="bg-white rounded-eight shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+<img alt="Educación" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgYlPOqeFSAy2NdhSb6UF-pvsdDUvw6_r4I-h6Xu4QS9-uDRqqwfvj997rIVwMgic5RdC35yyJlv9f3OP1d49ILbcNZ7uk5Bw8XCT62mmQEA-gxNoalA1Q6tbe1DV06zfFI08SOkZHDOWCRMceT-i1H6K2FumzmGzr6dpV888zCl7Q6mlRqOMcGWgn6iUAPc1F7_rx313rcR7CrrGcqyHJ3qchCIoyA846_4ZlytIOIJtW6WF08jlZPYWR_EXWrxfq9gfcjhZs6pw"/>
+<div class="p-6">
+<h3 class="text-xl font-bold text-brand-dark mb-3">Excelencia educativa con la apertura del liceo municipal</h3>
+<p class="text-gray-600 text-sm mb-4">El Alcalde anunció la inauguración de nuevos espacios para el fortalecimiento de...</p>
+<a class="text-brand-blue font-bold text-sm hover:underline" href="#">Leer más</a>
+</div>
+</article>
+</div>
+<div class="mt-12 text-center">
+<button class="bg-brand-green text-white px-8 py-2 rounded-eight font-bold">Ver todas</button>
+</div>
+</div>
+<!-- Right: Sidebar -->
+<div class="lg:w-1/3 space-y-8">
+<!-- PAM Card -->
+<div class="bg-brand-green text-white p-8 rounded-eight text-center">
+<h3 class="text-2xl font-bold mb-4">Programa de Asistencia Médica (PAM)</h3>
+<p class="mb-6">Atención gratuita para todos los mirandinos. Regístrate aquí.</p>
+<a class="bg-white text-brand-green px-6 py-2 rounded-eight font-bold inline-block" href="#">Registrarse</a>
+</div>
+<!-- Social Feed Placeholder -->
+<div class="bg-gray-100 p-6 rounded-eight border border-gray-200">
+<h3 class="text-center font-bold text-gray-700 mb-4">@alcaldiademiranda</h3>
+<div class="grid grid-cols-2 gap-2">
+<div class="aspect-square bg-gray-300 rounded"></div>
+<div class="aspect-square bg-gray-300 rounded"></div>
+<div class="aspect-square bg-gray-300 rounded"></div>
+<div class="aspect-square bg-gray-300 rounded"></div>
+</div>
+<div class="flex justify-center space-x-4 mt-6">
+<div class="w-8 h-8 bg-brand-blue rounded-full"></div>
+<div class="w-8 h-8 bg-brand-green rounded-full"></div>
+<div class="w-8 h-8 bg-red-500 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- END: NewsSection -->
+<!-- BEGIN: ServicesSection -->
+<section class="bg-white py-20 border-t border-b">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-16">¡Disfruta de todo lo que Miranda tiene para ti!</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Trámites -->
+<div class="relative h-96 group overflow-hidden rounded-eight cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="{{DATA:IMAGE:IMAGE_14}}"/>
+<div class="absolute inset-0 bg-black/40 p-8 flex flex-col justify-end">
+<p class="text-white/80 text-sm">Haz tu vida más fácil</p>
+<h3 class="text-2xl font-bold text-white mb-4 uppercase">Trámites</h3>
+<div class="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center text-white">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</div>
+</div>
+<!-- Atención -->
+<div class="relative h-96 group overflow-hidden rounded-eight cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="{{DATA:IMAGE:IMAGE_13}}"/>
+<div class="absolute inset-0 bg-black/40 p-8 flex flex-col justify-end">
+<p class="text-white/80 text-sm">Realiza tu reporte o denuncia</p>
+<h3 class="text-2xl font-bold text-white mb-4 uppercase">Atención al ciudadano</h3>
+<div class="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center text-white">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</div>
+</div>
+<!-- Turismo -->
+<div class="relative h-96 group overflow-hidden rounded-eight cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="{{DATA:IMAGE:IMAGE_15}}"/>
+<div class="absolute inset-0 bg-black/40 p-8 flex flex-col justify-end">
+<p class="text-white/80 text-sm">Descubre todos los rincones</p>
+<h3 class="text-2xl font-bold text-white mb-4 uppercase">Turismo y recreación</h3>
+<div class="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center text-white">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ServicesSection -->
+<!-- BEGIN: DevelopmentSection -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2">
+<img alt="Desarrollo Social" class="rounded-eight shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwme-TNcnsJrbwmeHzGWpFUoGwo8UuLbsA7VULmCpseMR-a6AtzOowReb4_LbXBonXXYJx6R_bPRNYa55gWLoOqPm04dMOt_2RQlcMa4m_3nhIpe8gLMmil9SeoJ9E2l3lUbqgO6d_cfyqNueG3oJ34TQU7nh_vCHoHYZMxAKwBc_deKde9esdhojEA1IN6LszTusYzbdnliVf3KdbS4_ALFTjeeBmmesGerwWcrlXHbifGb455XwkwrYYXfVnUOaELMW-0cSPAAE"/>
+</div>
+<div class="md:w-1/2">
+<h2 class="section-title">Desarrollo Social</h2>
+<p class="text-gray-600 mb-8 leading-relaxed">
+          Atendemos las necesidades sociales del Municipio Miranda, implementando programas para el desarrollo integral de los ciudadanos, así como promover su concientización y participación, fortaleciendo los servicios necesarios que restituya los derechos y deberes en el marco legal vigente.
+        </p>
+<button class="bg-brand-green text-white px-8 py-3 rounded-eight font-bold hover:bg-green-600 transition-colors">Ver más</button>
+</div>
+</div>
+</section>
+<!-- END: DevelopmentSection -->
+<!-- BEGIN: ProjectsSection -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4 text-center">
+<h2 class="section-title">Proyectos en nuestra comunidad</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-left">
+<!-- Project 1 -->
+<div class="bg-white border rounded-eight p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="h-40 bg-gray-100 flex items-center justify-center mb-4 rounded">
+<img alt="Psicología" class="h-32" src="{{DATA:IMAGE:IMAGE_14}}"/>
+</div>
+<h3 class="text-lg font-bold text-brand-dark mb-2">Servicio de psicología</h3>
+<p class="text-sm text-gray-500 mb-4">Brindamos apoyo integral para el bienestar emocional de los mirandinos...</p>
+<a class="text-brand-blue font-bold text-xs uppercase" href="#">Ver más</a>
+</div>
+<!-- Project 2 -->
+<div class="bg-white border rounded-eight p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="h-40 bg-gray-100 flex items-center justify-center mb-4 rounded overflow-hidden">
+<img alt="Luz Led" class="w-full h-full object-cover" src="{{DATA:IMAGE:IMAGE_13}}"/>
+</div>
+<h3 class="text-lg font-bold text-brand-dark mb-2">Luz led para Miranda</h3>
+<p class="text-sm text-gray-500 mb-4">Instalación de luminarias LED para calles más seguras y modernas...</p>
+<a class="text-brand-blue font-bold text-xs uppercase" href="#">Ver más</a>
+</div>
+<!-- Project 3 -->
+<div class="bg-white border rounded-eight p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="h-40 bg-gray-100 flex items-center justify-center mb-4 rounded">
+<div class="text-4xl font-bold text-gray-400">PAM</div>
+</div>
+<h3 class="text-lg font-bold text-brand-dark mb-2">Programa PAM Miranda</h3>
+<p class="text-sm text-gray-500 mb-4">Asistencia médica gratuita las 24 horas y entrega de medicamentos...</p>
+<a class="text-brand-blue font-bold text-xs uppercase" href="#">Ver más</a>
+</div>
+</div>
+<div class="mt-12">
+<button class="bg-brand-green text-white px-8 py-2 rounded-eight font-bold">Ver todos</button>
+</div>
+</div>
+</section>
+<!-- END: ProjectsSection -->
+<!-- BEGIN: Footer -->
+<footer class="bg-brand-dark text-white pt-16 pb-8">
+<div class="container mx-auto px-4 text-center">
+<img alt="Logo Footer" class="h-24 mx-auto mb-8 bg-white p-2 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWDLLc6QSOBKvvKdi04SUYkJA7XxN6TW158c0HnozT5J95CR3x2fJILkaZLlVdwDDifx3csGHboGFCO4fc0b20doG890o7JKy6YHQWKdS5DV3wmh2vF81Ni1Pe2-ZA_QvIQ3v4SIYxVuLcD6b1-c_s3bFx_u9m5XFQ45ZFAC-X2w3VoCVahojr_P3ZnlaSGWkw8ogswQVx9xxq-Nw9jkycki4UnqSBlV0wS2gdUGp0n9uFNSr04Fv3KNAQkJ6dzhoCb-9UEcuRb1g"/>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-12 text-sm uppercase font-semibold">
+<a class="hover:text-brand-yellow" href="#">Inicio</a>
+<a class="hover:text-brand-yellow" href="#">Alcaldía</a>
+<a class="hover:text-brand-yellow" href="#">Trámites</a>
+<a class="hover:text-brand-yellow" href="#">Turismo</a>
+<a class="hover:text-brand-yellow" href="#">El Municipio</a>
+<a class="hover:text-brand-yellow" href="#">Noticias</a>
+<a class="hover:text-brand-yellow" href="#">Atención</a>
+</div>
+<div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs opacity-70">
+<p>© 2024 Alcaldía del Municipio Miranda. Todos los derechos reservados.</p>
+<p class="mt-4 md:mt-0">Diseñado para la gestión transparente y eficiente.</p>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+<!-- Floating Social Menu -->
+<div class="fixed right-4 bottom-24 flex flex-col space-y-2 z-50">
+<a class="w-10 h-10 bg-brand-green rounded flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform" href="#">!</a>
+<a class="w-10 h-10 bg-brand-blue rounded flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform" href="#">f</a>
+<a class="w-10 h-10 bg-red-600 rounded flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform" href="#">y</a>
+<a class="w-10 h-10 bg-green-500 rounded flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform" href="#">w</a>
+</div>
+</body></html>

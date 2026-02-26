@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  password      String?
+  role          String    @default("ADMIN")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  content     String   @db.Text
+  excerpt     String?
+  image       String?
+  published   Boolean  @default(false)
+  category    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @db.Text
+  image       String?
+  link        String?
+  status      String?  @default("En progreso")
+  createdAt   DateTime @default(now())
+}
+
+model Procedure {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  link        String?
+  category    String?
+  createdAt   DateTime @default(now())
+}
+
+model EmergencyContact {
+  id          String   @id @default(cuid())
+  name        String
+  phone       String
+  active      Boolean  @default(true)
+}
+
+model Banner {
+  id          String   @id @default(cuid())
+  title       String?
+  subtitle    String?
+  image       String
+  link        String?
+  priority    Int      @default(0)
+  active      Boolean  @default(true)
+}
+
+model PamRegistration {
+  id          String   @id @default(cuid())
+  fullName    String
+  dni         String   @unique
+  phone       String?
+  email       String?
+  address     String?
+  status      String   @default("PENDING")
+  createdAt   DateTime @default(now())
+}

@@ -1,0 +1,17 @@
+import Link from "next/link";
+
+export default function TopBar() {
+    return (
+        <div className="bg-brand-dark text-white py-2 px-4 md:px-12 text-xs flex justify-between items-center">
+            <div className="flex items-center space-x-4">
+                <span>Número de emergencia: <strong>0268-2512345</strong></span>
+            </div>
+            <div className="hidden md:flex space-x-4">
+                <Link href="/gacetas" className="hover:underline">Gacetas Municipales</Link>
+                <Link href="/ordenanzas" className="hover:underline">Ordenanzas</Link>
+                <Link href="/memoria-y-cuenta" className="hover:underline">Memoria y Cuenta</Link>
+                <Link href="/semanario" className="hover:underline">Semanario</Link>
+            </div>
+        </div>
+    );
+}
