@@ -6,37 +6,27 @@ import Image from "next/image";
 export default function DevelopmentSection() {
     return (
         <section className="py-20 bg-gray-50 overflow-hidden">
-            {/* Contenedor ancho para que ambas se vean grandes de lado a lado */}
+            {/* El contenedor max-w-[1500px] evita que en monitores gigantes se estire infinito */}
             <div className="max-w-[1500px] mx-auto px-6">
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+                {/* Eliminamos el Grid y usamos un solo bloque al 100% de ancho */}
+                <div className="relative group overflow-hidden rounded-3xl shadow-2xl border-4 border-white">
 
-                    {/* Contenedor Imagen 1 */}
-                    <div className="relative group overflow-hidden rounded-2xl shadow-lg border border-white">
-                        {/* 'aspect-[16/10]' asegura una proporción idéntica para ambas */}
-                        <div className="relative w-full aspect-[16/10] md:aspect-[16/9]">
-                            <Image
-                                alt="Desarrollo Social Miranda"
-                                src="/banner.png"
-                                fill
-                                /* 'object-cover' llena todo el espacio sin deformar */
-                                className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                            />
-                        </div>
-                    </div>
+                    {/* aspect-[21/9] es ideal para banners de ancho completo. 
+          En móvil (h-[300px]) forzamos una altura mínima para que no sea una línea delgada. 
+      */}
+                    <div className="relative w-full h-[300px] md:h-auto md:aspect-[21/9] lg:aspect-[25/9]">
+                        <Image
+                            alt="Desarrollo Social Miranda"
+                            src="/banner2.jpeg"
+                            fill
+                            /* 'object-cover' asegura que rellene todo el ancho sin dejar espacios */
+                            className="object-cover transition-transform duration-1000 ease-in-out group-hover:scale-105"
+                            priority
+                        />
 
-                    {/* Contenedor Imagen 2 */}
-                    <div className="relative group overflow-hidden rounded-2xl shadow-lg border border-white">
-                        {/* MISMA proporción exacta que la primera */}
-                        <div className="relative w-full aspect-[16/10] md:aspect-[16/9]">
-                            <Image
-                                alt="Radio Desarrollo Social"
-                                src="/radio.jpeg"
-                                fill
-                                /* Al usar 'object-cover', esta imagen se recortará para coincidir en tamaño */
-                                className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                            />
-                        </div>
+                        {/* Overlay sutil opcional: le da un toque premium al pasar el mouse */}
+                        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500"></div>
                     </div>
 
                 </div>

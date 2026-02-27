@@ -10,9 +10,9 @@ const PROJECTS = [
         status: "Activo"
     },
     {
-        title: "Luz led para Miranda",
-        description: "Instalación de luminarias LED de última generación para calles proyectando un municipio más seguro...",
-        image: "/proyecto-luz.jpg",
+        title: "Plan Coro Bonito",
+        description: "Plan “Coro Bonito” realiza su primera entrega este 2025 El plan “Coro Bonito” inicia este 2025 con todo el ímpetu que el alcalde Henry Hernández le imprime.",
+        image: "/chamos.jpeg",
         status: "En ejecución"
     },
     {
