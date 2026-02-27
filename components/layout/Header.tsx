@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -13,12 +14,37 @@ function cn(...inputs: ClassValue[]) {
 
 export default function Header() {
     const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useUIStore();
+    // Estado local para manejar qué submenú está abierto en la versión móvil
+    const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+
+    const toggleSubmenu = (name: string) => {
+        setOpenSubmenu(openSubmenu === name ? null : name);
+    };
 
     const navLinks = [
         { name: "Inicio", href: "/" },
-        { name: "Alcaldía", href: "#", hasDropdown: true },
+        {
+            name: "Alcaldía",
+            href: "#",
+            hasDropdown: true,
+            subLinks: [
+                { name: "Misión", href: "/alcaldia/mision" },
+                { name: "Visión", href: "/alcaldia/vision" },
+                { name: "Organigrama", href: "/alcaldia/organigrama" },
+                { name: "Nuestro Alcalde", href: "/alcaldia/alcalde" },
+            ]
+        },
         { name: "Trámites", href: "#", hasDropdown: true },
-        { name: "M. Miranda", href: "/municipio", hasDropdown: true },
+        {
+            name: "M. Miranda",
+            href: "#", // Cambiado a "#" porque ahora funciona como un contenedor de submenú
+            hasDropdown: true,
+            subLinks: [
+                { name: "Municipio", href: "/municipio" },
+                { name: "Efemérides", href: "/municipio/efemerides" },
+                { name: "Símbolos", href: "/municipio/simbolos" },
+            ]
+        },
         { name: "Noticias", href: "/noticias" },
     ];
 
@@ -43,11 +69,30 @@ export default function Header() {
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center space-x-6">
                     {navLinks.map((link) => (
-                        <div key={link.name} className="group relative">
+                        <div key={link.name} className="group relative py-2">
                             {link.hasDropdown ? (
-                                <button className="nav-link flex items-center">
-                                    {link.name} <ChevronDown className="w-4 h-4 ml-1" />
-                                </button>
+                                <>
+                                    <button className="nav-link flex items-center cursor-pointer">
+                                        {link.name} <ChevronDown className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform duration-200" />
+                                    </button>
+
+                                    {/* Desktop Dropdown Menu */}
+                                    {link.subLinks && (
+                                        <div className="absolute left-0 top-full w-48 bg-white shadow-lg rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left -translate-y-2 group-hover:translate-y-0 border border-gray-100">
+                                            <div className="flex flex-col py-2">
+                                                {link.subLinks.map((sublink) => (
+                                                    <Link
+                                                        key={sublink.name}
+                                                        href={sublink.href}
+                                                        className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                                                    >
+                                                        {sublink.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </>
                             ) : (
                                 <Link href={link.href} className={cn("nav-link", link.name === "Inicio" && "text-brand-blue")}>
                                     {link.name}
@@ -55,7 +100,6 @@ export default function Header() {
                             )}
                         </div>
                     ))}
-
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -70,19 +114,46 @@ export default function Header() {
             {/* Mobile Navigation Menu */}
             {isMobileMenuOpen && (
                 <div className="lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg h-screen overflow-y-auto pb-20">
-                    <div className="flex flex-col p-4 space-y-4">
+                    <div className="flex flex-col p-4">
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                className="text-gray-700 font-medium py-2 border-b border-gray-50 flex justify-between items-center"
-                                onClick={closeMobileMenu}
-                            >
-                                {link.name}
-                                {link.hasDropdown && <ChevronDown className="w-4 h-4" />}
-                            </Link>
-                        ))}
+                            <div key={link.name} className="border-b border-gray-50 flex flex-col">
+                                {link.hasDropdown ? (
+                                    <>
+                                        <button
+                                            className="text-gray-700 font-medium py-3 flex justify-between items-center w-full text-left"
+                                            onClick={() => toggleSubmenu(link.name)}
+                                        >
+                                            {link.name}
+                                            <ChevronDown className={cn("w-4 h-4 transition-transform duration-200", openSubmenu === link.name && "rotate-180")} />
+                                        </button>
 
+                                        {/* Mobile Submenu Dropdown */}
+                                        {openSubmenu === link.name && link.subLinks && (
+                                            <div className="flex flex-col pl-4 pb-3 space-y-2 bg-gray-50/50">
+                                                {link.subLinks.map((sublink) => (
+                                                    <Link
+                                                        key={sublink.name}
+                                                        href={sublink.href}
+                                                        className="text-gray-600 text-sm py-2 px-2 hover:text-blue-600 rounded-md"
+                                                        onClick={closeMobileMenu}
+                                                    >
+                                                        {sublink.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </>
+                                ) : (
+                                    <Link
+                                        href={link.href}
+                                        className="text-gray-700 font-medium py-3 flex justify-between items-center"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
             )}

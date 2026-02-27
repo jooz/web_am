@@ -7,9 +7,9 @@ export default function Footer() {
 
 
     return (
-        <footer className="bg-brand-dark text-white pt-16 pb-8">
+        <footer className="bg-brand-dark text-white pt-8 pb-8">
             <div className="container mx-auto px-4 text-center">
-                <div className="mb-8">
+                <div className="mb-4">
                     <Image
                         src="/logomiranda.jpeg"
                         alt="Logo Alcaldía de Miranda"
@@ -17,6 +17,13 @@ export default function Footer() {
                         height={80}
                         className="mx-auto rounded-full p-1 bg-white"
                     />
+                </div>
+
+                <div className="mb-2">
+                    <h2 className="text-2xl font-bold mb-2">Alcaldía del Municipio Miranda</h2>
+                    <p className="text-lg">Correo: gobiernoquetransforma2026@gmail.com</p>
+                    <p className="text-lg">Teléfono: +58 0268-2545624</p>
+                    <p className="text-lg">Dirección: Calle Principal, Coro, Falcón, Venezuela</p>
                 </div>
 
 
