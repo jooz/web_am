@@ -7,14 +7,37 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UserRole {
+  ADMIN
+  OPERATOR
+  CITIZEN
+}
+
+enum RequestStatus {
+  PENDING
+  REVIEWING
+  APPROVED
+  REJECTED
+  COMPLETED
+}
+
+enum ReportPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
 model User {
   id            String    @id @default(cuid())
   name          String?
   email         String?   @unique
   password      String?
-  role          String    @default("ADMIN")
+  role          UserRole  @default(ADMIN)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
+  reports       Report[]
+  socialRequests SocialAssistance[]
 }
 
 model News {
@@ -40,13 +63,52 @@ model Project {
   createdAt   DateTime @default(now())
 }
 
-model Procedure {
+// Modelo escalable para Atención Social (Ayudas y Donaciones Médicas)
+model SocialAssistance {
+  id              String        @id @default(cuid())
+  fullName        String
+  dni             String
+  phone           String
+  email           String?
+  address         String        @db.Text
+  requestType     String        // Ejemplo: "Donación Médica", "Ayuda Económica", "Insumos"
+  description     String        @db.Text
+  attachments     String[]      // URLs a informes médicos o requisitos
+  status          RequestStatus @default(PENDING)
+  observations    String?       @db.Text
+  userId          String?       // Opcional: si el ciudadano tiene cuenta
+  user            User?         @relation(fields: [userId], references: [id])
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+// Modelo para Atención al Ciudadano (Denuncias y Reportes)
+model Report {
+  id              String         @id @default(cuid())
+  title           String
+  description     String         @db.Text
+  location        String?        // Dirección del incidente
+  category        String         // Ejemplo: "Alumbrado", "Aseo", "Vialidad"
+  priority        ReportPriority @default(MEDIUM)
+  status          RequestStatus  @default(PENDING)
+  images          String[]       // URLs de evidencias
+  userId          String?        
+  user            User?          @relation(fields: [userId], references: [id])
+  anonymous       Boolean        @default(false)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+}
+
+// Modelo para el Chatbot y Base de Conocimientos futura
+model KnowledgeBase {
   id          String   @id @default(cuid())
-  name        String
-  description String?
-  link        String?
+  question    String   @db.Text
+  answer      String   @db.Text
   category    String?
+  tags        String[]
+  active      Boolean  @default(true)
   createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model EmergencyContact {
@@ -64,15 +126,4 @@ model Banner {
   link        String?
   priority    Int      @default(0)
   active      Boolean  @default(true)
-}
-
-model PamRegistration {
-  id          String   @id @default(cuid())
-  fullName    String
-  dni         String   @unique
-  phone       String?
-  email       String?
-  address     String?
-  status      String   @default("PENDING")
-  createdAt   DateTime @default(now())
 }

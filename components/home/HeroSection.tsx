@@ -6,6 +6,12 @@ import Image from "next/image";
 
 const HERO_SLIDES = [
     {
+        title: "ALCALDÍA BOLIVARIANA DE MIRANDA",
+        subtitle: "Gestión eficiente al servicio del pueblo mirandino.",
+        image: "/portada.png",
+        link: "/"
+    },
+    {
         title: "SANTA ANA DE CORO: TESORO COLONIAL",
         subtitle: "Descubre la primera capital de Venezuela y su Casco Histórico, Patrimonio de la Humanidad.",
         image: "/casa-del-tesoro.jpg",
@@ -36,7 +42,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section className="relative h-[500px] md:h-[650px] overflow-hidden">
+        <section className="relative h-[600px] md:h-[750px] overflow-hidden">
             {HERO_SLIDES.map((slide, index) => (
                 <div
                     key={index}
@@ -47,7 +53,7 @@ export default function HeroSection() {
                         src={slide.image}
                         alt={slide.title}
                         fill
-                        className="object-cover object-center scale-105"
+                        className="object-cover object-center"
                         priority={index === 0}
                     />
                     <div className="absolute inset-0 hero-gradient bg-black/40"></div>
