@@ -8,7 +8,7 @@ const HERO_SLIDES = [
     {
         title: "",
         subtitle: "",
-        image: "/portada.jpeg",
+        image: "/portada.png",
         link: "/"
     },
     {
@@ -53,7 +53,7 @@ export default function HeroSection() {
                         src={slide.image}
                         alt={slide.title}
                         fill
-                        className={`${index === 0 ? "object-contain" : "object-cover"} object-center`}
+                        className={`${index === 0 ? "object-fill" : "object-fill"} object-center`}
                         priority={index === 0}
                         sizes="100vw"
                     />
