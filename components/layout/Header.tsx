@@ -82,13 +82,7 @@ export default function Header() {
                                 {link.hasDropdown && <ChevronDown className="w-4 h-4" />}
                             </Link>
                         ))}
-                        <Link
-                            href="/semat"
-                            className="bg-brand-green text-white px-4 py-3 rounded-eight font-bold text-center block"
-                            onClick={closeMobileMenu}
-                        >
-                            Semat en Línea
-                        </Link>
+
                     </div>
                 </div>
             )}
