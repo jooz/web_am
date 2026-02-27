@@ -18,7 +18,7 @@ const SERVICES = [
     {
         title: "Turismo y recreación",
         subtitle: "Descubre todos los rincones",
-        image: "/servicio-turismo.jpg",
+        image: "/turismo.png",
         href: "/turismo"
     }
 ];
