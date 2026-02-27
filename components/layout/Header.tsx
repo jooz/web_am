@@ -18,9 +18,8 @@ export default function Header() {
         { name: "Inicio", href: "/" },
         { name: "Alcaldía", href: "#", hasDropdown: true },
         { name: "Trámites", href: "#", hasDropdown: true },
-        { name: "Turismo", href: "/turismo" },
+        { name: "M. Miranda", href: "/municipio", hasDropdown: true },
         { name: "Noticias", href: "/noticias" },
-        { name: "Atención al Ciudadano", href: "/atencion-ciudadano" },
     ];
 
     return (
@@ -56,12 +55,7 @@ export default function Header() {
                             )}
                         </div>
                     ))}
-                    <Link
-                        href="/semat"
-                        className="bg-brand-green text-white px-4 py-2 rounded-eight font-bold hover:bg-green-600 transition-colors"
-                    >
-                        Semat en Línea
-                    </Link>
+
                 </div>
 
                 {/* Mobile Menu Toggle */}

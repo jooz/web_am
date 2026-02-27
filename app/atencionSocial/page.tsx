@@ -8,7 +8,7 @@ export default function Page() {
             <TopBar />
             <Header />
             <main className='container mx-auto px-4 py-20 min-h-[60vh] text-center'>
-                <h1 className='text-4xl font-bold text-brand-dark mb-4 uppercase'>Trámites</h1>
+                <h1 className='text-4xl font-bold text-brand-dark mb-4 uppercase'>Atención Social</h1>
                 <p className='text-gray-600 max-w-2xl mx-auto'>
                     Esta sección está siendo desarrollada para brindar mejores servicios digitales a los ciudadanos del Municipio Miranda.
                 </p>

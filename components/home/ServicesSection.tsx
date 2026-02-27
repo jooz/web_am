@@ -4,10 +4,10 @@ import { ChevronRight } from "lucide-react";
 
 const SERVICES = [
     {
-        title: "Trámites",
+        title: "Atencion Social",
         subtitle: "Haz tu vida más fácil",
-        image: "/servicio-tramites.jpg",
-        href: "/tramites"
+        image: "/atencion_ciudadano.jpeg",
+        href: "/atencionSocial"
     },
     {
         title: "Atención al ciudadano",
