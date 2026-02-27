@@ -6,9 +6,9 @@ import Image from "next/image";
 
 const HERO_SLIDES = [
     {
-        title: "ALCALDÍA BOLIVARIANA DE MIRANDA",
-        subtitle: "Gestión eficiente al servicio del pueblo mirandino.",
-        image: "/portada.png",
+        title: "",
+        subtitle: "",
+        image: "/portada.jpeg",
         link: "/"
     },
     {
@@ -42,7 +42,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section className="relative h-[600px] md:h-[750px] overflow-hidden">
+        <section className="relative w-full bg-black overflow-hidden" style={{ aspectRatio: '1080 / 617' }}>
             {HERO_SLIDES.map((slide, index) => (
                 <div
                     key={index}
@@ -53,30 +53,33 @@ export default function HeroSection() {
                         src={slide.image}
                         alt={slide.title}
                         fill
-                        className="object-cover object-center"
+                        className={`${index === 0 ? "object-contain" : "object-cover"} object-center`}
                         priority={index === 0}
+                        sizes="100vw"
                     />
-                    <div className="absolute inset-0 hero-gradient bg-black/40"></div>
+                    <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
                 </div>
             ))}
 
             <div className="relative z-20 container mx-auto h-full flex flex-col justify-center px-4 md:px-12 text-white">
-                <div className="max-w-4xl animate-fade-in">
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg uppercase">
-                        {HERO_SLIDES[currentSlide].title}
-                    </h1>
-                    <p className="mt-6 text-lg md:text-2xl max-w-2xl opacity-90 drop-shadow-md font-medium">
-                        {HERO_SLIDES[currentSlide].subtitle}
-                    </p>
-                    <div className="mt-10">
-                        <Link
-                            href={HERO_SLIDES[currentSlide].link}
-                            className="bg-brand-green hover:bg-green-600 text-white px-10 py-4 rounded-eight font-bold text-lg inline-block transition-all hover:scale-110 shadow-xl border-2 border-white/20"
-                        >
-                            Ver más información
-                        </Link>
+                {HERO_SLIDES[currentSlide].title && (
+                    <div className="max-w-4xl animate-fade-in">
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg uppercase">
+                            {HERO_SLIDES[currentSlide].title}
+                        </h1>
+                        <p className="mt-6 text-lg md:text-2xl max-w-2xl opacity-90 drop-shadow-md font-medium">
+                            {HERO_SLIDES[currentSlide].subtitle}
+                        </p>
+                        <div className="mt-10">
+                            <Link
+                                href={HERO_SLIDES[currentSlide].link}
+                                className="bg-brand-green hover:bg-green-600 text-white px-10 py-4 rounded-eight font-bold text-lg inline-block transition-all hover:scale-110 shadow-xl border-2 border-white/20"
+                            >
+                                Ver más información
+                            </Link>
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
 
             {/* Carousel Dots */}
