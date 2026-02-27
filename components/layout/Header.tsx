@@ -34,7 +34,12 @@ export default function Header() {
                 { name: "Nuestro Alcalde", href: "/alcaldia/alcalde" },
             ]
         },
-        { name: "Trámites", href: "#", hasDropdown: true },
+        {
+            name: "Trámites", href: "#", hasDropdown: true,
+            subLinks: [
+                { name: "Terminal de Pasajero Pólicas Salas", href: "/terminal" },
+            ]
+        },
         {
             name: "M. Miranda",
             href: "#", // Cambiado a "#" porque ahora funciona como un contenedor de submenú
@@ -61,7 +66,7 @@ export default function Header() {
                             className="mr-2 object-contain rounded-full"
                         />
                         <span className="ml-1 text-lg md:text-xl font-bold text-brand-dark tracking-tight hidden sm:block">
-                            Alcaldía de Miranda
+                            ALCALDÍA DE MIRANDA
                         </span>
                     </Link>
                 </div>
