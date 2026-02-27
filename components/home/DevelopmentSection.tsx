@@ -6,34 +6,33 @@ import Image from "next/image";
 export default function DevelopmentSection() {
     return (
         <section className="py-20 bg-gray-50 overflow-hidden">
-            {/* Contenedor extra ancho para maximizar el espacio de lectura */}
-            <div className="max-w-[1400px] mx-auto px-4">
+            {/* Contenedor extra ancho para que las fotos sean grandes */}
+            <div className="max-w-[1500px] mx-auto px-6">
 
-                {/* Grid de 2 columnas con espacio (gap) ajustado */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                    {/* Imagen 1 */}
-                    <div className="relative group bg-white rounded-2xl shadow-xl overflow-hidden border-4 border-white">
-                        {/* Altura fija alta para que el texto sea legible */}
-                        <div className="relative w-full h-[450px] lg:h-[600px]">
+                    {/* Imagen 1 - Sin "efecto tarjeta" */}
+                    <div className="relative group flex justify-center items-center">
+                        {/* Contenedor invisible: solo define el tamaño */}
+                        <div className="relative w-full h-[400px] md:h-[550px] lg:h-[700px] overflow-hidden rounded-xl">
                             <Image
                                 alt="Desarrollo Social Miranda"
                                 src="/banner.png"
                                 fill
-                                /* "object-contain" para que NO se corte ni un milímetro de información */
-                                className="object-contain p-2 transition-transform duration-700 ease-in-out group-hover:scale-110"
+                                /* "object-contain" para no cortar, y quitamos bordes/fondos */
+                                className="object-contain transition-transform duration-700 ease-out group-hover:scale-110"
                             />
                         </div>
                     </div>
 
-                    {/* Imagen 2 */}
-                    <div className="relative group bg-white rounded-2xl shadow-xl overflow-hidden border-4 border-white">
-                        <div className="relative w-full h-[450px] lg:h-[600px]">
+                    {/* Imagen 2 - Sin "efecto tarjeta" */}
+                    <div className="relative group flex justify-center items-center">
+                        <div className="relative w-full h-[400px] md:h-[550px] lg:h-[700px] overflow-hidden rounded-xl">
                             <Image
                                 alt="Radio Desarrollo Social"
                                 src="/radio.jpeg"
                                 fill
-                                className="object-contain p-2 transition-transform duration-700 ease-in-out group-hover:scale-110"
+                                className="object-contain transition-transform duration-700 ease-out group-hover:scale-110"
                             />
                         </div>
                     </div>
