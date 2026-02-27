@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
 import "./globals.css";
+import ChatBubble from "@/components/layout/ChatBubble";
 
 const publicSans = Public_Sans({
   variable: "--font-public-sans",
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${publicSans.variable} font-sans antialiased bg-gray-50`}>
         {children}
+        <ChatBubble />
       </body>
     </html>
   );

@@ -4,15 +4,7 @@ import Image from "next/image";
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
-    const footerLinks = [
-        { name: "Inicio", href: "/" },
-        { name: "Alcaldía", href: "/alcaldia" },
-        { name: "Trámites", href: "/tramites" },
-        { name: "Turismo", href: "/turismo" },
-        { name: "El Municipio", href: "/municipio" },
-        { name: "Noticias", href: "/noticias" },
-        { name: "Atención", href: "/atencion-ciudadano" },
-    ];
+
 
     return (
         <footer className="bg-brand-dark text-white pt-16 pb-8">
@@ -27,13 +19,7 @@ export default function Footer() {
                     />
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-12 text-sm uppercase font-semibold">
-                    {footerLinks.map((link) => (
-                        <Link key={link.name} href={link.href} className="hover:text-brand-yellow transition-colors">
-                            {link.name}
-                        </Link>
-                    ))}
-                </div>
+
 
                 <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs opacity-70">
                     <p>© {currentYear} Alcaldía del Municipio Miranda. Todos los derechos reservados.</p>
