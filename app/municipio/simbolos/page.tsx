@@ -127,7 +127,7 @@ export default function Page() {
                                             </svg>
                                         </div>
                                         <h3 className="text-2xl font-bold italic">"El gran nombre de Miranda lo lleva nuestra alcaldía..."</h3>
-                                        <p className="text-brand-blue/40 text-sm uppercase tracking-widest italic">Himno Oficial</p>
+                                        <p className="text-brand-white/40 text-sm uppercase tracking-widest italic">Himno Oficial</p>
                                     </div>
                                     {/* Abstract shapes */}
                                     <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-blue/20 rounded-full blur-2xl"></div>
