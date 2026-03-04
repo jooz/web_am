@@ -24,11 +24,9 @@ export default function Page() {
                         <div className="w-full lg:w-1/2 space-y-8">
                             <div className="relative">
                                 <span className="absolute -top-10 -left-4 text-brand-blue/10 text-9xl font-serif select-none">"</span>
-                                <h2 className="text-2xl md:text-3xl font-bold text-brand-dark border-l-4 border-brand-yellow pl-4 mb-6">
-                                    Mision de la Alcaldia del Municipio Miranda
-                                </h2>
+
                                 <p className="text-lg text-gray-700 leading-relaxed italic">
-                                    "Promover el cumplimiento de las competencias establecidas legalmente, el desarrollo social, económico, tecnológico, cultural y político del municipio Miranda, de manera sustentable y productiva, con el propósito de satisfacer las necesidades individuales y colectivas de sus habitantes, a través de una administración transparente, eficiente, participativa, solidaria, y coordinada con los diferentes ámbitos de gobierno, el poder popular, el sector privado y los gremios
+                                    Promover el cumplimiento de las competencias establecidas legalmente, el desarrollo social, económico, tecnológico, cultural y político del municipio Miranda, de manera sustentable y productiva, con el propósito de satisfacer las necesidades individuales y colectivas de sus habitantes, a través de una administración transparente, eficiente, participativa, solidaria, y coordinada con los diferentes ámbitos de gobierno, el poder popular, el sector privado y los gremios
                                 </p>
                             </div>
 
