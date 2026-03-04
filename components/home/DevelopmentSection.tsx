@@ -9,8 +9,16 @@ const bioItems = [
         text: "Docente universitario en el área de las Ciencias de la Salud",
     },
     {
-        icon: "⚖️",
+        icon: "🏛️",
         text: "Secretario General de Gobierno del Estado",
+    },
+    {
+        icon: "⚕️",
+        text: "Autoridad única de salud",
+    },
+    {
+        icon: "🤝",
+        text: "Jefe del gabinete social del estado",
     },
 ];
 
@@ -74,16 +82,16 @@ export default function DevelopmentSection() {
                     {/* ═══════════════════════════════════════════
               LAYOUT: foto | divider | texto
           ═══════════════════════════════════════════ */}
-                    <div className="relative z-20 flex flex-col md:flex-row items-stretch">
+                    <div className="relative z-20 flex flex-col rounded-3xl md:flex-row items-stretch">
 
                         {/* ── FOTO DEL ALCALDE (izquierda) ── */}
                         <div
-                            className="flex-shrink-0 flex items-end justify-center self-end"
+                            className="flex-shrink-0 flex items-end justify-center self-end rounded-3xl"
                             style={{ width: "clamp(180px, 24vw, 340px)" }}
                         >
                             {/* Sombra ambiental bajo la foto */}
                             <div
-                                className="relative w-full"
+                                className="relative w-full mx-auto rounded-3xl overflow-hidden shadow-xl"
                                 style={{ height: "clamp(260px, 35vw, 490px)" }}
                             >
                                 {/* Brillo radial detrás del alcalde */}
@@ -102,7 +110,7 @@ export default function DevelopmentSection() {
                                     quality={100}
                                     priority
                                     sizes="(max-width: 768px) 70vw, 24vw"
-                                    className="object-contain object-bottom z-10"
+                                    className="object-cover object-top z-10 rounded-3xl"
                                     style={{
                                         filter: "drop-shadow(0 8px 32px rgba(0,0,0,0.6))",
                                     }}
