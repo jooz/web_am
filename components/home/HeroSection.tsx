@@ -12,22 +12,10 @@ const HERO_SLIDES = [
         link: "/"
     },
     {
-        title: "SANTA ANA DE CORO: TESORO COLONIAL",
-        subtitle: "Descubre la primera capital de Venezuela y su Casco Histórico, Patrimonio de la Humanidad.",
-        image: "/casa-del-tesoro.jpg",
-        link: "/noticias/recuperacion-casco-historico"
-    },
-    {
-        title: "MÉDANOS DE CORO: NATURALEZA ÚNICA",
-        subtitle: "Un desierto infinito que se funde con el Caribe, símbolo eterno de nuestra tierra mirandina.",
-        image: "/coro.jpg",
-        link: "/turismo"
-    },
-    {
-        title: "GESTIÓN MIRANDA: CONSTRUYENDO EL FUTURO",
-        subtitle: "Modernización y servicios eficientes para transformar la calidad de vida de nuestra gente.",
-        image: "/coro2.webp",
-        link: "/proyectos"
+        title: "",
+        subtitle: "",
+        image: "/radio.png",
+        link: "/"
     }
 ];
 
