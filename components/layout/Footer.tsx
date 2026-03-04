@@ -13,9 +13,9 @@ export default function Footer() {
                     <Image
                         src="/logomiranda.jpeg"
                         alt="Logo Alcaldía de Miranda"
-                        width={80}
-                        height={80}
-                        className="mx-auto rounded-full p-1 bg-white"
+                        width={60}
+                        height={60}
+                        className="mx-auto p-1 bg-white"
                     />
                 </div>
 

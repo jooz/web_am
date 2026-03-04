@@ -63,7 +63,7 @@ export default function Header() {
                             alt="Logo Alcaldía de Miranda"
                             width={60}
                             height={60}
-                            className="mr-2 object-contain rounded-full"
+                            className="mr-2 object-contain"
                         />
                         <span className="ml-1 text-lg md:text-xl font-bold text-brand-dark tracking-tight hidden sm:block">
                             ALCALDÍA DE MIRANDA
