@@ -25,7 +25,7 @@ export default function Page() {
                             <div className="relative">
                                 <span className="absolute -top-10 -left-4 text-brand-blue/10 text-9xl font-serif select-none">"</span>
 
-                                <p className="text-lg text-gray-700 leading-relaxed italic">
+                                <p className="text-lg text-gray-700 leading-relaxed italic text-justify">
                                     Promover el cumplimiento de las competencias establecidas legalmente, el desarrollo social, económico, tecnológico, cultural y político del municipio Miranda, de manera sustentable y productiva, con el propósito de satisfacer las necesidades individuales y colectivas de sus habitantes, a través de una administración transparente, eficiente, participativa, solidaria, y coordinada con los diferentes ámbitos de gobierno, el poder popular, el sector privado y los gremios
                                 </p>
                             </div>
