@@ -33,7 +33,7 @@ export default function ProjectsSection() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
                     {PROJECTS.map((project) => (
                         <div key={project.title} className="group bg-white border border-gray-100 rounded-eight overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
-                            <div className="relative flex-1 min-h-[300px] overflow-hidden">
+                            <div className="relative h-[450px] overflow-hidden">
                                 {project.video ? (
                                     <video
                                         autoPlay
@@ -59,7 +59,7 @@ export default function ProjectsSection() {
                                     {project.status}
                                 </div>
                             </div>
-                            <div className="p-8 flex flex-col flex-1">
+                            <div className="p-8 flex flex-col flex-grow">
                                 <h3 className="text-xl font-bold text-brand-dark mb-4 group-hover:text-brand-blue transition-colors">
                                     {project.title}
                                 </h3>
@@ -68,7 +68,7 @@ export default function ProjectsSection() {
                                 </p>
                                 <Link
                                     href="/proyectos"
-                                    className="mt-auto text-brand-blue font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-1 transition-transform"
+                                    className="text-brand-blue font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-1 transition-transform"
                                 >
                                     Ver más detalles
                                     <ArrowUpRight className="ml-1 w-3 h-3" />
