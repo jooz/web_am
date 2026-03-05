@@ -14,12 +14,14 @@ const PROJECTS = [
         title: "Fortalecimiento de los Servicios Públicos (Agua y Electricidad)",
         description: "Bajo el esquema de Municipio Saludable, se están ejecutando proyectos de optimización en conjunto con la Gobernación: 1. Sustitución de colectores: Reemplazo de tuberías de aguas servidas en sectores críticos del centro histórico y la zona oeste. 2. Iluminación LED: Instalación de luminarias de última tecnología en las 7 parroquias del municipio para reforzar la seguridad nocturna y el ahorro energético.",
         image: "/proy-2.jpeg",
+        video: "/proy2.mp4",
         status: "En ejecución"
     },
     {
         title: "Rehabilitación del Centro Histórico y Espacios Públicos",
         description: "Como parte de su Plan de Gobierno Coro Patrimonio Mundial, se están desarrollando obras de preservación y ornato: 1.Restauración de fachadas: Mantenimiento de las casonas coloniales y áreas peatonales del casco histórico (Patrimonio de la Humanidad). 2. Plazas y parques: Recuperación de espacios de esparcimiento para fomentar el turismo y la economía local, alineado con las metas de desarrollo sustentable del municipio.",
         image: "/proy-3.jpeg",
+        video: "/proy3.mp4",
         status: "En ejecución"
     }
 ];
