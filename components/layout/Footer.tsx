@@ -31,6 +31,7 @@ export default function Footer() {
                 <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs opacity-70">
                     <p>© {currentYear} Alcaldía del Municipio Miranda. Todos los derechos reservados.</p>
                     <p className="mt-4 md:mt-0">Diseñado para la gestión transparente y eficiente.</p>
+                    <p className="mt-4 md:mt-0">Desarrollado por Grupo Jooz (+58 414-6274986, +58 412-7924589).</p>
                 </div>
             </div>
         </footer>

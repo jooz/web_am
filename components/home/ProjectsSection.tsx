@@ -4,22 +4,23 @@ import { ArrowUpRight } from "lucide-react";
 
 const PROJECTS = [
     {
-        title: "Servicio de psicología",
-        description: "Brindamos apoyo integral para el bienestar emocional de los mirandinos con personal calificado...",
-        image: "/proyecto-psicologia.jpg",
-        status: "Activo"
-    },
-    {
-        title: "Plan Coro Bonito",
-        description: "Plan “Coro Bonito” realiza su primera entrega este 2025 El plan “Coro Bonito” inicia este 2025 con todo el ímpetu que el alcalde Henry Hernández le imprime.",
-        image: "/chamos.jpeg",
+        title: "Plan de Recuperación Vial y Asfaltado (Coro 500)",
+        description: "El plan de asfaltado en la variante norte de Coro avanza a paso firme y ya supera las 3.000 toneladas de asfalto colocadas, una cifra que refleja el impulso sostenido de las políticas de infraestructura promovidas por el Gobierno Bolivariano en el estado Falcón.",
+        image: "/proy-1.jpeg",
+        video: "/proy1.mp4",
         status: "En ejecución"
     },
     {
-        title: "Programa PAM Miranda",
-        description: "Asistencia médica gratuita las 24 horas y entrega periódica de medicamentos a domicilio...",
-        image: "/proyecto-pam.jpg",
-        status: "Permanente"
+        title: "Fortalecimiento de los Servicios Públicos (Agua y Electricidad)",
+        description: "Bajo el esquema de Municipio Saludable, se están ejecutando proyectos de optimización en conjunto con la Gobernación: 1. Sustitución de colectores: Reemplazo de tuberías de aguas servidas en sectores críticos del centro histórico y la zona oeste. 2. Iluminación LED: Instalación de luminarias de última tecnología en las 7 parroquias del municipio para reforzar la seguridad nocturna y el ahorro energético.",
+        image: "/proy-2.jpeg",
+        status: "En ejecución"
+    },
+    {
+        title: "Rehabilitación del Centro Histórico y Espacios Públicos",
+        description: "Como parte de su Plan de Gobierno Coro Patrimonio Mundial, se están desarrollando obras de preservación y ornato: 1.Restauración de fachadas: Mantenimiento de las casonas coloniales y áreas peatonales del casco histórico (Patrimonio de la Humanidad). 2. Plazas y parques: Recuperación de espacios de esparcimiento para fomentar el turismo y la economía local, alineado con las metas de desarrollo sustentable del municipio.",
+        image: "/proy-3.jpeg",
+        status: "En ejecución"
     }
 ];
 
@@ -33,12 +34,25 @@ export default function ProjectsSection() {
                     {PROJECTS.map((project) => (
                         <div key={project.title} className="group bg-white border border-gray-100 rounded-eight overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
                             <div className="relative h-56 overflow-hidden">
-                                <Image
-                                    alt={project.title}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    src={project.image}
-                                    fill
-                                />
+                                {project.video ? (
+                                    <video
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    >
+                                        <source src={project.video} type="video/mp4" />
+                                        Tu navegador no soporta el elemento de video.
+                                    </video>
+                                ) : (
+                                    <Image
+                                        alt={project.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        src={project.image}
+                                        fill
+                                    />
+                                )}
                                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-brand-dark font-bold text-[10px] px-3 py-1 rounded-full shadow-sm">
                                     {project.status}
                                 </div>
