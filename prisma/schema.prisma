@@ -4,7 +4,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 enum UserRole {
@@ -92,11 +91,11 @@ model Report {
   priority        ReportPriority @default(MEDIUM)
   status          RequestStatus  @default(PENDING)
   images          String[]       // URLs de evidencias
-  userId          String?        
+  userId          String?
   user            User?          @relation(fields: [userId], references: [id])
   anonymous       Boolean        @default(false)
   createdAt       DateTime       @default(now())
-  updatedAt       DateTime       @updatedAt
+  updatedAt       DateTime      @updatedAt
 }
 
 // Modelo para el Chatbot y Base de Conocimientos futura
@@ -126,4 +125,33 @@ model Banner {
   link        String?
   priority    Int      @default(0)
   active      Boolean  @default(true)
+}
+
+model Ordinance {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  number      String?  // Ej: 001-2024
+  date        DateTime?
+  description String?  @db.Text
+  category    String?
+  status      String?  @default("Vigente") // Vigente, Derogada, Reformada
+  image       String?
+  pdfUrl      String?
+  published   Boolean  @default(true)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Gazette {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  number      String?  // Ej: Extraordinaria N° 450
+  date        DateTime?
+  pdfUrl      String?
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
