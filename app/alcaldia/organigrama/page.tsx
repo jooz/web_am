@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 export default function Page() {
     const [showAll, setShowAll] = useState(false);
-    const initialCount = 6;
+    const initialCount = 8;
 
     // Datos de los directivos con las fotos
     const directivos = [
