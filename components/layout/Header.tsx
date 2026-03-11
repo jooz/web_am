@@ -30,7 +30,7 @@ export default function Header() {
             subLinks: [
                 { name: "Misión", href: "/alcaldia/mision" },
                 { name: "Visión", href: "/alcaldia/vision" },
-                { name: "Organigrama", href: "/alcaldia/organigrama" },
+                { name: "Directivos", href: "/alcaldia/organigrama" },
                 { name: "Nuestro Alcalde", href: "/alcaldia/alcalde" },
             ]
         },
