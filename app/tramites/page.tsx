@@ -19,7 +19,7 @@ export default function TramitesPage() {
                 {/* Hero Section */}
                 <div className="bg-brand-dark text-white py-20">
                     <div className="container mx-auto px-4 text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4">Sistemas Externos</h1>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4">TRÁMITES</h1>
                         <p className="text-gray-300 max-w-2xl mx-auto">
                             Acceda a los sistemas externos del Municipio Miranda para realizar trámites y consultas.
                             Enlaces directos a servicios esenciales para nuestros ciudadanos.

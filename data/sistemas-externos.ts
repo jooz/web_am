@@ -14,7 +14,7 @@ export const SISTEMAS_EXTERNOS: SistemaExterno[] = [
         description: "Sistema de facturación de Aseo Urbano y Relleno Sanitario del Municipio Miranda",
         url: "https://serdeco.com.ve/",
         category: "Aseo Urbano",
-        image: "/sederco.jpeg"
+        image: "/sederco.png"
     },
     {
         id: "2",
