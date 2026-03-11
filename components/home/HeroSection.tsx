@@ -5,12 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const HERO_SLIDES = [
-    {
-        title: "",
-        subtitle: "",
-        image: "/portada.png",
-        link: "/"
-    },
+
     {
         title: "",
         subtitle: "",
