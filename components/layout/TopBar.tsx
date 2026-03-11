@@ -7,10 +7,10 @@ export default function TopBar() {
 
             </div>
             <div className="hidden md:flex space-x-6">
-                <Link href="/gacetas" className="hover:underline">Gacetas Municipales</Link>
-                <Link href="/ordenanzas" className="hover:underline">Ordenanzas</Link>
+                {/*<Link href="/gacetas" className="hover:underline">Gacetas Municipales</Link>
+                <Link href="/ordenanzas" className="hover:underline">Ordenanzas</Link>*/}
                 <div className="flex items-center space-x-4">
-                    <span className="text-yellow-300">Número de emergencia: <strong>0268-2545624</strong></span>
+                    <span className="text-yellow-300">Número de contacto: <strong>0268-2545624</strong></span>
                 </div>
             </div>
         </div>

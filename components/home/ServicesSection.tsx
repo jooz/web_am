@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react";
 
 const SERVICES = [
     {
-        title: "Atencion Social",
+        title: "Miranda Contigo",
         subtitle: "Haz tu vida más fácil",
         image: "/atencion_ciudadano.jpeg",
         href: "/atencionSocial"

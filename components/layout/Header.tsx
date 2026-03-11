@@ -34,12 +34,10 @@ export default function Header() {
                 { name: "Nuestro Alcalde", href: "/alcaldia/alcalde" },
             ]
         },
-        /*{
-            name: "Trámites", href: "#", hasDropdown: true,
-            subLinks: [
-                { name: "Terminal de Pasajero Pólicas Salas", href: "/terminal" },
-            ]
-        },*/
+        {
+            name: "Trámites", href: "/tramites",
+
+        },
         {
             name: "M. Miranda",
             href: "#", // Cambiado a "#" porque ahora funciona como un contenedor de submenú
