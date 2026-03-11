@@ -49,7 +49,7 @@ export default function HeroSection() {
                         src={slide.image}
                         alt={slide.title || "Hero Image"}
                         fill
-                        className="object-cover object-center"
+                        className="object-fill object-center"
                         priority={index === 0}
                         sizes="100vw"
                     />
