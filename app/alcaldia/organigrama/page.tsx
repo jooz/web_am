@@ -14,117 +14,118 @@ export default function Page() {
     const directivos = [
         {
             id: 1,
-            image: '/documentos/directivos/IMG_7063.JPG.jpeg',
-            name: 'Directivo 1',
-            description: 'Cargo y descripción del directivo'
+            image: '/documentos/directivos/IMG_7072.JPG.jpeg',
+            name: 'Luis Gerardo Chávez Noroño',
+            description: 'Director del Despacho del Alcalde: Abogado con experiencia en gestión pública y administración tributaria. Coordina el funcionamiento del despacho del alcalde y la articulación institucional de las distintas dependencias municipales.'
         },
+
         {
             id: 2,
             image: '/documentos/directivos/IMG_7064.JPG.jpeg',
-            name: 'Directivo 2',
-            description: 'Cargo y descripción del directivo'
+            name: 'Cruz Hernández',
+            description: 'Presidenta del Instituto Municipal de Patrimonio: Encargada de promover la preservación y protección del patrimonio histórico, cultural y arquitectónico del municipio, fortaleciendo la identidad y memoria colectiva de Miranda.'
         },
         {
             id: 3,
             image: '/documentos/directivos/IMG_7065.JPG.jpeg',
-            name: 'Directivo 3',
-            description: 'Cargo y descripción del directivo'
+            name: 'Rosalymar Romero',
+            description: 'Jefa de la Oficina de Talento Humano: Abogada y asesora de seguros con experiencia en gestión administrativa. Desde Talento Humano promueve el fortalecimiento institucional y el desarrollo del capital humano de la alcaldía.'
         },
         {
             id: 4,
             image: '/documentos/directivos/IMG_7066.JPG.jpeg',
-            name: 'Directivo 4',
-            description: 'Cargo y descripción del directivo'
+            name: 'Lidiberlis Colina',
+            description: 'Directora de Protección Civil en el municipio Miranda: Responsable de la coordinación de las acciones de prevención, atención y gestión de riesgos en el municipio. Desde Protección Civil trabaja junto a las comunidades para fortalecer la cultura preventiva y garantizar una respuesta oportuna ante emergencias y desastres naturales.'
         },
         {
             id: 5,
             image: '/documentos/directivos/IMG_7067.JPG.jpeg',
-            name: 'Directivo 5',
-            description: 'Cargo y descripción del directivo'
+            name: 'Inés Lourdes Yánez García',
+            description: 'Presidenta del Consejo Municipal de Derechos del Niño, Niña y Adolescente: Profesional comprometida con la protección integral de la infancia y la adolescencia. Desde el Consejo Municipal promueve políticas y acciones orientadas a garantizar los derechos de los niños, niñas y adolescentes del municipio.'
         },
         {
             id: 6,
             image: '/documentos/directivos/IMG_7068.JPG.jpeg',
-            name: 'Directivo 6',
-            description: 'Cargo y descripción del directivo'
+            name: 'Karliana José García Cumare',
+            description: 'Secretaria de Hacienda: Profesional con sólida formación en administración y gerencia financiera. Doctora en Ciencias Gerenciales y especialista en gestión de recursos públicos, orientada a fortalecer la eficiencia financiera y la transparencia en la administración municipal'
         },
         {
             id: 7,
             image: '/documentos/directivos/IMG_7069.JPG.jpeg',
-            name: 'Directivo 7',
-            description: 'Cargo y descripción del directivo'
+            name: 'Jaires Noroño',
+            description: 'Secretario de Ambiente/Encargado del Plan Miranda sin Botes: Ingeniero comprometido con la protección ambiental y el desarrollo sostenible del municipio. Desde la Secretaría de Ambiente impulsa políticas de conservación y lidera el Plan Miranda Sin Botes, iniciativa orientada a mejorar el sistema de drenajes y prevenir inundaciones en las comunidades.'
         },
         {
             id: 8,
             image: '/documentos/directivos/IMG_7070.JPG.jpeg',
-            name: 'Directivo 8',
-            description: 'Cargo y descripción del directivo'
+            name: 'Baldemar García Medina',
+            description: 'Secretario de Desarrollo Agrícola, Pecuario y Pesquero: Licenciado en Gestión Social con formación técnica en administración y planificación sociocomunitaria. Trabaja en el impulso de la producción agrícola, pecuaria y pesquera para fortalecer la economía local y la soberanía alimentaria.'
         },
         {
             id: 9,
             image: '/documentos/directivos/IMG_7071.JPG.jpeg',
-            name: 'Directivo 9',
-            description: 'Cargo y descripción del directivo'
+            name: 'Rómulo Alirio Hernández Hernández',
+            description: 'Secretario Territorial: Encargado de la articulación territorial entre la alcaldía y las comunidades. Su gestión fortalece la organización popular y la planificación del desarrollo local.'
         },
         {
             id: 10,
-            image: '/documentos/directivos/IMG_7072.JPG.jpeg',
-            name: 'Directivo 10',
-            description: 'Cargo y descripción del directivo'
+            image: '/documentos/directivos/IMG_7063.JPG.jpeg',
+            name: 'José David Pernalete Jiménez',
+            description: 'Síndico Procurador Municipal: Abogado encargado de la defensa jurídica de los intereses del municipio. Su labor se centra en garantizar el cumplimiento de la legalidad en las actuaciones administrativas de la alcaldía.'
         },
         {
             id: 11,
             image: '/documentos/directivos/IMG_7073.JPG.jpeg',
-            name: 'Directivo 11',
-            description: 'Cargo y descripción del directivo'
+            name: 'Jhoan Moreno',
+            description: 'Secretario Político de la Alcaldía: Dirigente comprometido con la organización política y el fortalecimiento del proyecto bolivariano en el municipio. Desde la Secretaría Política impulsa la articulación entre el gobierno municipal, las fuerzas sociales y el poder popular.'
         },
         {
             id: 12,
             image: '/documentos/directivos/IMG_7074.JPG.jpeg',
-            name: 'Directivo 12',
-            description: 'Cargo y descripción del directivo'
+            name: 'Pablo José García Valera',
+            description: 'Secretario de Seguridad Ciudadana: Abogado y especialista en gerencia pública con formación en ciencias policiales y derechos humanos. Lidera las políticas de seguridad ciudadana orientadas a la protección del pueblo y al fortalecimiento de la convivencia en el municipio.'
         },
         {
             id: 13,
             image: '/documentos/directivos/IMG_7075.JPG.jpeg',
-            name: 'Directivo 13',
-            description: 'Cargo y descripción del directivo'
+            name: 'Juan Carlos Jiménez',
+            description: 'Presidente del Instituto Municipal de Tránsito y Transporte: Responsable de la planificación y regulación del tránsito y transporte en el municipio. Desde el instituto impulsa acciones para mejorar la movilidad urbana y la seguridad vial.'
         },
         {
             id: 14,
             image: '/documentos/directivos/IMG_7076.JPG.jpeg',
-            name: 'Directivo 14',
-            description: 'Cargo y descripción del directivo'
+            name: 'Elis Manuel Romero Bonalde',
+            description: 'Superintendente Tributario del Municipio Miranda: Responsable de la administración y fiscalización de los tributos municipales. Trabaja para fortalecer la recaudación y optimizar los ingresos destinados al desarrollo del municipio.'
         },
         {
             id: 15,
             image: '/documentos/directivos/IMG_7199.JPG.jpeg',
-            name: 'Directivo 15',
-            description: 'Cargo y descripción del directivo'
+            name: 'Eduardo José Polanco',
+            description: 'Director General del Cuerpo Policial Bolivariano del Municipio Miranda: Encargado de dirigir y coordinar las acciones del cuerpo policial municipal. Su gestión se centra en garantizar la seguridad ciudadana, la prevención del delito y la protección del pueblo mirandino.'
         },
         {
             id: 16,
             image: '/documentos/directivos/IMG_7200.JPG.jpeg',
-            name: 'Directivo 16',
-            description: 'Cargo y descripción del directivo'
+            name: 'Reynni José Bonaldes Romero',
+            description: 'Presidente del Instituto municipal de Hábitat: Ingeniero civil con formación técnica en mecánica industrial. Desde el Instituto de Hábitat impulsa proyectos orientados al desarrollo urbano, el mejoramiento de viviendas y el fortalecimiento de la infraestructura del municipio'
         },
         {
             id: 17,
             image: '/documentos/directivos/IMG_7201.JPG.jpeg',
-            name: 'Directivo 17',
-            description: 'Cargo y descripción del directivo'
+            name: 'Johan Oviedo',
+            description: 'Presidente de FONDESMIRANDA: Responsable de dirigir el Fondo de Desarrollo del Municipio Miranda (FONDESMIRANDA). Desde esta institución impulsa programas y proyectos orientados al fortalecimiento del desarrollo económico local, el apoyo a iniciativas productivas y el bienestar de las comunidades.'
         },
         {
             id: 18,
             image: '/documentos/directivos/IMG_7202.JPG.jpeg',
-            name: 'Directivo 18',
-            description: 'Cargo y descripción del directivo'
+            name: 'Bita Margarita Sivira',
+            description: 'Secretaria de Bienestar Social: Licenciada en Educación Inicial, magíster en Desarrollo Comunitario y doctora en Ciencias de la Educación. Impulsa políticas sociales orientadas a la atención integral de las comunidades y al fortalecimiento del tejido social.'
         },
         {
             id: 19,
             image: '/documentos/directivos/IMG_7203.JPG.jpeg',
-            name: 'Directivo 19',
-            description: 'Cargo y descripción del directivo'
+            name: 'Edgar Partidas',
+            description: 'Presidente del Terminal de Pasajeros Polica Salas: Responsable de la administración y funcionamiento del principal terminal terrestre del municipio. Desde su gestión trabaja para garantizar un servicio de transporte organizado, seguro y eficiente para los usuarios.'
         }
     ];
 
@@ -155,11 +156,11 @@ export default function Page() {
                             </div>
 
                             <div className='p-8 flex flex-col flex-grow'>
-                                <h3 className='text-xl font-bold text-brand-dark mb-4 group-hover:text-brand-blue transition-colors leading-snug'>
+                                <h3 className='text-xl font-bold text-brand-dark mb-2 group-hover:text-brand-blue transition-colors leading-snug'>
                                     {directivo.name}
                                 </h3>
 
-                                <p className='text-gray-600 text-sm mb-6 line-clamp-3'>
+                                <p className='text-gray-600 text-sm mb-4 line-clamp-9 text-justify'>
                                     {directivo.description}
                                 </p>
 
