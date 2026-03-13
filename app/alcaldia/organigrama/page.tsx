@@ -129,13 +129,13 @@ export default function Page() {
         },
         {
             id: 20,
-            image: '/documentos/directivos/maria_amaya.jpeg',
+            image: '/documentos/directivos/maria_amaya.jpg',
             name: 'María Auxiliadora Amaya',
             description: 'Presidenta del Instituto Autónomo de Cementerios: Encargada de la administración y mantenimiento de los cementerios municipales. Su labor se orienta a garantizar servicios dignos, ordenados y respetuosos para las familias mirandinas.'
         },
         {
             id: 21,
-            image: '/documentos/directivos/douglas_perez.jpeg',
+            image: '/documentos/directivos/douglas_perez.jpg',
             name: 'Douglas Raúl Pérez Bravo',
             description: 'Presidente del Instituto Autónomo Matadero Industrial: Médico cirujano y especialista en nefrología. Dirige el matadero industrial municipal, promoviendo procesos sanitarios adecuados y contribuyendo a la seguridad alimentaria de la población.'
         }
