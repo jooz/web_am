@@ -126,6 +126,18 @@ export default function Page() {
             image: '/documentos/directivos/IMG_7203.JPG.jpeg',
             name: 'Edgar Partidas',
             description: 'Presidente del Terminal de Pasajeros Polica Salas: Responsable de la administración y funcionamiento del principal terminal terrestre del municipio. Desde su gestión trabaja para garantizar un servicio de transporte organizado, seguro y eficiente para los usuarios.'
+        },
+        {
+            id: 20,
+            image: '/documentos/directivos/maria_amaya.jpeg',
+            name: 'María Auxiliadora Amaya',
+            description: 'Presidenta del Instituto Autónomo de Cementerios: Encargada de la administración y mantenimiento de los cementerios municipales. Su labor se orienta a garantizar servicios dignos, ordenados y respetuosos para las familias mirandinas.'
+        },
+        {
+            id: 21,
+            image: '/documentos/directivos/douglas_perez.jpeg',
+            name: 'Douglas Raúl Pérez Bravo',
+            description: 'Presidente del Instituto Autónomo Matadero Industrial: Médico cirujano y especialista en nefrología. Dirige el matadero industrial municipal, promoviendo procesos sanitarios adecuados y contribuyendo a la seguridad alimentaria de la población.'
         }
     ];
 

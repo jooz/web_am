@@ -1,102 +1,69 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-
-const HERO_SLIDES = [
-
-    {
-        title: "",
-        subtitle: "",
-        image: "/radio.png",
-        link: "/"
-    }
-];
+import { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [showText, setShowText] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [isMuted, setIsMuted] = useState(true);
 
     useEffect(() => {
-        // Al cargar o cambiar de slide, ocultamos el texto primero
-        setShowText(false);
+        const video = videoRef.current;
+        if (!video) return;
 
-        // Esperamos un momento (ej. 600ms) para que la imagen cargue/transicione
-        const textTimer = setTimeout(() => {
-            setShowText(true);
-        }, 600);
+        // Browsers require `muted` for autoplay to work.
+        // We start muted, user can unmute via the button.
+        video.muted = true;
+        video.play().catch(() => {
+            // autoplay still blocked – nothing critical
+        });
+    }, []);
 
-        const slideTimer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-        }, 5000);
-
-        return () => {
-            clearInterval(slideTimer);
-            clearTimeout(textTimer);
-        };
-    }, [currentSlide]); // El efecto se dispara cada vez que cambia el slide
+    const toggleMute = () => {
+        const video = videoRef.current;
+        if (!video) return;
+        video.muted = !video.muted;
+        setIsMuted(video.muted);
+    };
 
     return (
-        <section className="relative w-full bg-black overflow-hidden" style={{ aspectRatio: '1080 / 617' }}>
-            {HERO_SLIDES.map((slide, index) => (
-                <div
-                    key={index}
-                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-                        }`}
-                >
-                    <Image
-                        src={slide.image}
-                        alt={slide.title || "Hero Image"}
-                        fill
-                        className="object-fill object-center"
-                        priority={index === 0}
-                        sizes="100vw"
-                    />
-                    <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
-                </div>
-            ))}
+        <section
+            className="relative w-full bg-black overflow-hidden"
+            style={{ aspectRatio: "1080 / 617" }}
+        >
+            {/* Video */}
+            <video
+                ref={videoRef}
+                src="/video_portada.mp4"
+                autoPlay
+                muted
+                playsInline
+                loop
+                className="absolute inset-0 w-full h-full object-cover"
+                preload="auto"
+            />
 
-            <div className="relative z-20 container mx-auto h-full flex flex-col justify-center px-4 md:px-12 text-white">
-                {HERO_SLIDES[currentSlide].title && (
-                    <div className={cn(
-                        "max-w-4xl transition-all duration-1000 transform",
-                        showText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                    )}>
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg uppercase">
-                            {HERO_SLIDES[currentSlide].title}
-                        </h1>
-                        <p className="mt-6 text-lg md:text-2xl max-w-2xl opacity-90 drop-shadow-md font-medium">
-                            {HERO_SLIDES[currentSlide].subtitle}
-                        </p>
-                        <div className="mt-10">
-                            <Link
-                                href={HERO_SLIDES[currentSlide].link}
-                                className="bg-brand-green hover:bg-green-600 text-white px-10 py-4 rounded-lg font-bold text-lg inline-block transition-all hover:scale-110 shadow-xl border-2 border-white/20"
-                            >
-                                Ver más información
-                            </Link>
-                        </div>
-                    </div>
+            {/* Mute / Unmute button */}
+            <button
+                onClick={toggleMute}
+                aria-label={isMuted ? "Activar sonido" : "Silenciar"}
+                className="absolute bottom-4 right-4 z-30 flex items-center justify-center w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white transition-all duration-200 backdrop-blur-sm border border-white/20"
+            >
+                {isMuted ? (
+                    /* Speaker off */
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                        <line x1="23" y1="9" x2="17" y2="15" />
+                        <line x1="17" y1="9" x2="23" y2="15" />
+                    </svg>
+                ) : (
+                    /* Speaker on */
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                    </svg>
                 )}
-            </div>
-
-            {/* Carousel Dots */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-30">
-                {HERO_SLIDES.map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => setCurrentSlide(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-white w-8" : "bg-white/40 hover:bg-white/70"
-                            }`}
-                    ></button>
-                ))}
-            </div>
+            </button>
         </section>
     );
-}
-
-// Función auxiliar cn (puedes usar la que ya tienes en tu proyecto)
-function cn(...inputs: any[]) {
-    return inputs.filter(Boolean).join(" ");
 }

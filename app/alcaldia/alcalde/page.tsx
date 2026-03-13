@@ -20,12 +20,12 @@ export default function Page() {
                 <div className="container mx-auto px-4 py-16">
                     <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
 
-                        {/* Image Section - Using the Mission-style photo pile or a refined version */}
-                        <div className="w-full lg:w-5/12 relative h-[500px] flex items-center justify-center">
-                            <div className="relative w-full max-w-sm h-full">
+                        {/* Image Section - Using a refined portrait display */}
+                        <div className="w-full lg:w-5/12 relative flex items-center justify-center py-12 lg:py-0">
+                            <div className="relative w-full max-w-sm">
                                 {/* Main Portrait */}
-                                <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full aspect-[3/4] z-20 transition-transform hover:scale-105 duration-500">
-                                    <div className="bg-white p-3 shadow-2xl rounded-sm border border-gray-100">
+                                <div className="relative w-full aspect-[3/4] z-20 transition-transform hover:scale-105 duration-500">
+                                    <div className="bg-white p-3 shadow-2xl rounded-sm border border-gray-100 h-full">
                                         <div className="relative w-full h-full aspect-[3/4] overflow-hidden">
                                             <Image
                                                 src="/alcalde_henry.jpg"
@@ -40,12 +40,10 @@ export default function Page() {
                                         </div>
                                     </div>
                                 </div>
-
-                                {/* Background decorations similar to mission page */}
+                                
+                                {/* Background decorations */}
                                 <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-brand-yellow/20 rounded-full blur-3xl -z-10"></div>
                                 <div className="absolute -top-10 -left-10 w-56 h-56 bg-brand-blue/10 rounded-full blur-3xl -z-10"></div>
-
-
                             </div>
                         </div>
 
