@@ -63,7 +63,7 @@ export default async function NoticiasPage() {
                                                 {news.title}
                                             </Link>
                                         </h3>
-                                        <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+                                        <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow whitespace-pre-line">
                                             {news.excerpt}
                                         </p>
                                         <Link

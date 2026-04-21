@@ -69,7 +69,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
                         <h1 className='text-4xl md:text-5xl font-bold text-brand-dark leading-tight mb-6'>
                             {news.title}
                         </h1>
-                        <p className="text-xl text-gray-600 font-light italic border-l-4 border-brand-green pl-4">
+                        <p className="text-xl text-gray-600 font-light italic border-l-4 border-brand-green pl-4 whitespace-pre-line">
                             {news.excerpt}
                         </p>
                     </header>
@@ -85,7 +85,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
                     )}
 
                     <div
-                        className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
+                        className="prose prose-lg max-w-none text-gray-700 leading-relaxed whitespace-pre-line"
                         dangerouslySetInnerHTML={{ __html: news.content }}
                     />
                 </article>
