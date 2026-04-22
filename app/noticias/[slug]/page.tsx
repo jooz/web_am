@@ -3,6 +3,7 @@ import TopBar from '@/components/layout/TopBar';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
+import NewsCarousel from '@/components/news/NewsCarousel';
 
 interface PageProps {
     params: { slug: string };
@@ -74,15 +75,14 @@ export default async function NewsDetailPage({ params }: PageProps) {
                         </p>
                     </header>
 
-                    {news.image && (
-                        <div className="w-full h-auto mb-10 overflow-hidden rounded-lg">
-                            <img
-                                src={imageUrl}
-                                alt={news.title}
-                                className="w-full max-h-[500px] object-cover hover:scale-105 transition-transform duration-700"
-                            />
-                        </div>
-                    )}
+                    {/* Galería de Imágenes (Portada + Adicionales) */}
+                    <NewsCarousel 
+                        images={[
+                            { id: 'cover', url: imageUrl },
+                            ...(news.images || [])
+                        ]} 
+                        title={news.title} 
+                    />
 
                     <div
                         className="prose prose-lg max-w-none text-gray-700 leading-relaxed whitespace-pre-line text-justify"
